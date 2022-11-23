@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ejercicios para pokemones con JS</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="content">
+        <h1>Funciones con Pokemones</h1>
+        <p id="previa">Revisar los resultados en la consola</p>
+        <div class="problema" id="F1">
+            <span class="enumeracion">1. </span><span class="enunciado">Ordernar los pokemons por base_damage de menor a mayor.</span>
+            <br>
+            <button class="botonejecutar" onclick="sortdamagePokemons()">Ejecutar</button>
+        </div>
+        <div class="problema" id="F2">
+            <span class="enumeracion">2. </span><span class="enunciado">Crear una funcion para ordernar los pokemons dependiendo de el argumento que se ingrese en la funcion. Pueden ingresar: type, base_damage, base_hp o speed.</span>
+            <br>
+            <span class="consejo">Escriba en la consola sortPokemons("a")</span>
+            <br>
+            <span class="consejo">"a" debe ser reemplazado por una de las siguientes opciones: type, base_damage, base_hp o speed.
+            <br>
+            <b id="aviso">IMPORTANTE: No olvidar las comillas.</b></span>
+        </div>
+        <div class="problema" id="F3">
+            <span class="enumeracion">3. </span><span class="enunciado">Crear una funcion que filtre el objeto pokemons y devuelva un arreglo con los pokemons filtrados. La funcion debe aceptar un argumento para filtrar por type de pokemon.</span>
+            <br>
+            <span class="consejo">Escriba en la consola filterPokemons("a")</span>
+            <br>
+            <span class="consejo">"a" debe ser reemplazado por una de las siguientes opciones: fire, water, leaf, electric, air o normal.
+            <br>
+            <b id="aviso">IMPORTANTE: No olvidar las comillas.</b></span>
+        </div>
+        <div class="problema" id="F4">
+            <span class="enumeracion">4. </span><span class="enunciado">Crear un objeto llamado Pokemon Master que tenga los siguientes atributos: id: number, name: string, created_date: string, y pokemon: array of objects.</span>
+            <br>
+            <button class="botonejecutar" onclick="pokemonmaster()">Ejecutar</button>
+        </div>
+        <div class="problema" id="F5">
+            <span class="enumeracion">5. </span><span class="enunciado">Crear una funcion que de manera aleatoria agregue un nuevo pokemon al atributo pokemon de Pokemon Master.</span>
+            <br>
+            <button class="botonejecutar" onclick="agreePokemon()">Ejecutar</button>
+        </div>
+        <div class="problema" id="F6">
+            <span class="enumeracion">6. </span><span class="enunciado">Crear una funcion que agregue de manera aleatoria los atributos min_damage y max_damage a nuestro arreglo de pokemons teniendo en cuenta lo siguiente: min_damage debe ser un numero entero aleatorio entre 1 y 2 y max_damage debe ser un numero entero aleatorio entre 3 y 5</span>
+            <br>
+            <button class="botonejecutar" onclick="agreeminAndMaxdamage()">Ejecutar</button>
+        </div>
+        <div class="problema" id="F7">
+            <span class="enumeracion">7. </span><span class="enunciado">Crear una funcion que determine el daño que hara un pokemon elegido de la lista ante una posible pelea, para ello considerar que el daño que hara el pokemon es:<br>daño = base_damage + un valor aleatorio entre el min_damage y el max_damage</span>
+            <br>
+            <button class="botonejecutar" onclick="agreeMaindamage()">Ejecutar</button>
+        </div>
+        <div class="problema" id="F8">
+            <span class="enumeracion">8. </span><span class="enunciado">Nuestro Pokemon Master quiere estar preparado para pelear, para ello necesita que lo apoyes a ordenar sus pokemons. El quiere que sus pokemons se ordenen de manera que el que tenga un mayor valor posible de base_damage + max_damage sea el que este primero en la lista y asi sucesivamente.</span>
+            <br>
+            <button class="botonejecutar" onclick="ordenarPokemons()">Ejecutar</button>
+        </div>
+        <div class="problema" id="FE">
+            <span class="enumeracion">Extra: </span><span class="enunciado">Liberar todos los pokemones del maestro pokemon.</span>
+            <button class="botonejecutar" onclick="vaciar()">Ejecutar</button>
+        </div>
+    </div>
+</body>
+</html>

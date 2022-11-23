@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(83, 83, 83);
+}
+
+.content{
+    padding-left: 20px;
+}
+
+h1{
+    color: blue;
+    text-decoration: underline;
+}
+
+#previa{
+    color: blueviolet;
+    padding-left: 10px;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.enumeracion{
+    color: red;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.enunciado{
+    color: cadetblue;
+    font-size: 1.25rem;
+    font-weight: 100;
+}
+
+.consejo{
+    padding-left: 50px;
+    color: orange;
+    font-size: 1rem;
+}
+
+#aviso{
+    padding-left: 50px;
+    font-size: 1.2rem;
+}
+
+.problema{
+    padding-left: 50px;
+}
+
+.botonejecutar{
+    font-size: 1rem;
+    background: orange;
+    border: none;
+    padding: 7px 15px;
+    margin: 10px 20px;
+    color: black;
+}
