@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 5</title>
+</head>
+<body>
+    <form id="miformulario">
+        <p>Indiquenos su nombre: <input type="text" name="trabajador" id="nombre" placeholder="Pablito Navajas"></p>
+        <p>Cantidad de horas trabajadas: <input type="number" name="horas" id="numeroHoras" min="1" placeholder="Numero de horas"></p>
+        <p>Cantidad de años de servicio: <input type="number" name="annos" id="numeroAnnos" min="1" placeholder="Numero de años"></p>
+        <p><input type="radio" name="Cat" id="CAT" value="40">A</p>
+        <p><input type="radio" name="Cat" id="CAT" value="35">B</p>
+        <p><input type="radio" name="Cat" id="CAT" value="30">C</p>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+    <div>
+        <p id="resultado"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
