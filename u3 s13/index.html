@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Conociendo AngularJS</title>
+</head>
+<body>
+    <h1>MULTIPLAN</h1>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>Distancia: <input type="number" ng-model="distance"></p>
+        <p>Tarifa: S/{{precioCalculado || 0}}</p>
+        <p>Descuento: {{descuento || 0}}</p>
+        <p>Total: S/{{total || 0}}</p>
+        <button ng-click="calcularPrecio()">Calcular</button>
+    </div>
+    <script>
+        function descuento(a){
+            if(a > 500){
+                return (a * 10)/100;
+            }else{
+                return 0;
+            }
+        };
+
+        var app= angular.module("myApp", []);
+        app.controller("myCtrl", function($scope){
+            $scope.calcularPrecio = function(){
+                var valor = 0
+                if($scope.distance > 0 && $scope.distance <=300){
+                    valor = 250;
+                }else if($scope.distance > 300 && $scope.distance <= 1000){
+                    valor = 250+(($scope.distance-300)*30);
+                }else if($scope.distance > 1000){
+                    valor = 250+(700*30)+($scope.distance-1000)*20;
+                };
+                $scope.precioCalculado = valor;
+                $scope.descuento = descuento(valor);
+                $scope.total = valor - $scope.descuento;
+            }
+            console.log($scope);
+        });
+    </script>
+</body>
+</html>
