@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Empleados con AngularJS</title>
+</head>
+<body>
+    <form ng-app="myForm" ng-controller="myCtrl">
+        <div id="empcod">
+            <p>Código: <input type="text" name="codemp" id="codEmp" ng-model="codigo" required></p>
+        </div>
+        <div id="hourwork">
+            <p>Horas trabajadas: <input type="number" name="workhour" id="workHour" ng-model="horas" min="1" required></p>
+        </div>
+        <div id="costhour">
+            <p>Tarifa por hora: <input type="number" name="hourcost" id="hourCost" ng-model="tarifahora" min="1" required></p>
+        </div>
+        <div id="boton">
+            <button ng-click="calcular()">Calcular</button>
+        </div>
+        <div id="result">
+            <p>{{resultado}}</p>
+        </div>
+    </form>
+    <script>
+        function descuento(a){
+            if(a >= 501 && a <= 1000){
+                return (a*2)/100;
+            } else if(a >= 1001 && a <= 4000){
+                return (a*8)/100;
+            } else if(a >= 4001 && a <= 8000){
+                return (a*15)/100;
+            } else if(a >= 8001 && a <= 10000){
+                return (a*21)/100;
+            } else if(a > 10000){
+                return (a*30)/100;
+            } else {
+                return 0
+            }
+        };
+
+        var app = angular.module('myForm', []);
+        app.controller('myCtrl', function($scope){
+            console.log($scope)
+            $scope.calcular = function(){
+                let salario = $scope.horas * $scope.tarifahora;
+                let descont = descuento(salario);
+                let salarioneto = salario - descont;
+                if(descont == 0){
+                    descont = ''
+                }else{
+                    descont = 'con un DESCUENTO de S/' + descont
+                }
+                $scope.resultado = 'El trabajador con CÓDIGO ' + $scope.codigo + ', con un SALARIO BÁSICO de S/' + salario +' , ' + descont + ' recibirá un SALARIO NETO de S/' + salarioneto + ' .';
+            }
+        })
+    </script>
+</body>
+</html>
