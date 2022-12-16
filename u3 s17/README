@@ -1,0 +1,1 @@
+En la carpeta api crear un documento de texto con el nombre .env || en este escribir MONGODB_URI={string de conexion con tu base de datos}

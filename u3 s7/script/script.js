@@ -1,6 +1,6 @@
 const form = document.querySelector('#miformulario');
 form.addEventListener('submit', Procesar);
-// //iconos success y error
+// // //iconos success y error
 // let success = '<i class="fa fa-check-circle fa-lg text-success h-100" aria-hidden="true"></i>';
 // let error = '<i class="fa fa-times-circle fa-lg text-danger h-100" aria-hidden="true"></i>';
 

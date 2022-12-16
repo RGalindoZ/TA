@@ -1,11 +1,12 @@
-// Agregar fecha de nacimiento y genero
 //Obtencion de inputs
-const inputs = $('input');
+const inputs = $('.a');
 console.log(inputs);
 const FirstName = inputs[0];
 const LastName = inputs[1];
 const Email = inputs[2];
-const Phone = inputs[3];
+const Date = inputs[3];
+const Gender = inputs[4];
+const Phone = inputs[5];
 const TextArea = $('#TextArea')[0];
 
 //Expresiones regulares
@@ -23,22 +24,31 @@ $('.btn').click(function(e){
         console.log(valor);
         let id = $(this).attr('id');
         console.log(id);
-        let exp = window['exp'+id];
-        console.log(exp);
-        if(exp.test(valor)){
-            if($(this).hasClass('is-invalid')){
-                $(this).removeClass('is-invalid');
-                $(this).addClass('is-valid');
-            } else {
-                $(this).addClass('is-valid');
+        if(id === 'Gender'){
+            console.log($(this).toLowerCase());
+            if($(this).val() === 'Male'){
+
             }
-        } else if(exp.test(valor) === false || valor === ""){
-            if($(this).hasClass('is-valid')){
-                $(this).removeClass('is-valid');
-                $(this).addClass('is-invalid');
-            } else {
-                $(this).addClass('is-invalid');
+        } else if(id === 'Date'){
+            
+        } else{
+            let exp = window['exp'+id];
+            console.log(exp);
+            if(exp.test(valor)){
+                if($(this).hasClass('is-invalid')){
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                } else {
+                    $(this).addClass('is-valid');
+                }
+            } else if(exp.test(valor) === false || valor === ""){
+                if($(this).hasClass('is-valid')){
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                } else {
+                    $(this).addClass('is-invalid');
+                }
             }
-        }
+        };
     });
 });
