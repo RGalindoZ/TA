@@ -1,0 +1,19 @@
+.suma{
+    color: aqua;
+}
+
+.resta{
+    color: blue;
+}
+
+.multiplicacion{
+    color: rgb(34, 255, 63);
+}
+
+.division{
+    color: violet;
+}
+
+.unselected{
+    color: red;
+}

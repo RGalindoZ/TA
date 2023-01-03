@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <div *ngFor="let entrada of inputs">
+    <label for="entrada.name">Ingrese el {{entrada.orden}} número</label>
+    <input  type="number" formControlName="{{entrada.name}}" id="entrada.name">
+  </div>
+  <select formControlName="operacion">
+    <option *ngFor="let operacion of operaciones" [ngValue]="operacion">
+      {{ operacion.nombre }}
+    </option>
+  </select>
+  <br>
+  <button type="submit" (click)="mono()">Operar</button>
+</form>
+
+ <p *ngIf="form.value.operacion?.valor != 0">Usted ha elegido : {{ form.value.operacion?.nombre }}</p>
+ <p [ngClass]="{'unselected':form.value.operacion?.valor === 0, 'suma': form.value.operacion?.valor === 1, 'resta': form.value.operacion?.valor === 2, 'multiplicacion': form.value.operacion?.valor === 3, 'division':form.value.operacion?.valor === 4}">Resultado : <span>{{ form.value.resultado }}</span></p>
