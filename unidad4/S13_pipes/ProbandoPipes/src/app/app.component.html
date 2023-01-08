@@ -1,0 +1,33 @@
+<div class="container border border-2 rounded mt-5 pb-3">
+  
+  <p class="fs-3 text-uppercase fw-bold primary text-primary text-center">ejemplos</p>
+  
+  <p>{{'123.02' | currency: 'USD'}}</p>
+  <P>{{fecha | date: 'full'}}</P>
+  <p>{{frase | titlecase | mypipe}}</p>
+  <p>{{frase | mypipe}}</p>
+
+  <hr>
+
+  <p class="fs-3 text-uppercase fw-bold primary text-primary text-center">uso de pipes</p>
+  <label class=" -label" for="texto">Valor: </label>
+  <input class="form-control" type="text" [(ngModel)]="texto" id="texto">
+  <p class="mt-3">Resultado: {{texto | uppercase}}</p>
+  <hr>
+  <p class="fs-3 text-uppercase fw-bold primary text-primary text-center">currency pipes</p>
+  <label for="moneda" class="form-label">Valor: </label>
+  <input class="form-control" type="number" [(ngModel)]="moneda" id="moneda">
+  <br>
+  <select name="currency" id="currencyselect" class="form-select form-select-sm" [(ngModel)]="currencyselect">
+    <option selected>Selecciona el tipo de moneda</option>
+    <option value="dolar">USD</option>
+    <option value="euro">EUR</option>
+  </select>
+  <p class="mt-3" *ngIf="currencyselect == 'dolar' || currencyselect == 'euro' "><span *ngIf="currencyselect == 'dolar' "><b>USD: </b>{{moneda | currency: 'USD'}}</span><span *ngIf="currencyselect == 'euro' "><b>EUR: </b>{{moneda | currency: 'EUR'}}</span></p>
+  <hr>
+  <p class="fs-3 text-uppercase fw-bold primary text-primary text-center">written ago...</p>
+  <p>The result is calculated by changing the date and time in the input.</p>
+  <label class="form-label" for="texto">Date: </label>
+  <input type="datetime-local" step="1"  min="1970-01-01T00:00" max="2030-12-31T00:00" [(ngModel)]="fechainput" (change)="mono(fechainput)">
+  <p>Resultado : {{fecharespuesta}}</p>
+</div>
